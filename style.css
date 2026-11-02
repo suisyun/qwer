@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --紙色: #f6f5f1;
+  --白色: #fff;
+  --墨色: #20231f;
+  --次要字: #747970;
+  --細線: #e7e6df;
+  --綠色: #316c51;
+  --淡綠: #eaf1e9;
+  --橘色: #e8a263;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+  color: var(--墨色);
+  background: var(--紙色);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 340px; background: var(--紙色); }
+button, input, select { font: inherit; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; }
+
+.頂欄 { height: 78px; max-width: 1320px; padding: 0 46px; margin: auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--細線); }
+.品牌 { display: inline-flex; gap: 11px; align-items: center; font-size: 17px; font-weight: 800; letter-spacing: .04em; }
+.品牌副標 { display: block; margin-top: 2px; font-size: 8px; font-weight: 600; letter-spacing: .16em; color: #93958e; }
+.品牌圖示 { width: 27px; height: 27px; display: flex; gap: 3px; align-items: flex-end; padding: 5px; border-radius: 8px 8px 8px 2px; background: var(--綠色); }
+.品牌圖示 i { width: 4px; display: block; border-radius: 3px; background: #f3f4e9; }
+.品牌圖示 i:nth-child(1) { height: 7px; }.品牌圖示 i:nth-child(2) { height: 12px; }.品牌圖示 i:nth-child(3) { height: 16px; }
+.主選單 { display: flex; gap: 40px; align-items: center; margin-left: 100px; height: 100%; font-size: 13px; color: #777a72; }
+.主選單 a { height: 100%; display: flex; align-items: center; position: relative; transition: color .2s; }
+.主選單 a:hover, .主選單 .選單目前 { color: var(--墨色); }
+.主選單 .選單目前::after { content: ''; position: absolute; height: 2px; background: var(--綠色); bottom: -1px; left: 0; right: 0; }
+.按鈕 { min-height: 42px; padding: 0 17px; border: 0; border-radius: 7px; cursor: pointer; font-weight: 600; font-size: 12px; transition: transform .2s, background .2s; }
+.按鈕:hover { transform: translateY(-1px); }
+.按鈕深色 { color: white; background: var(--墨色); }.按鈕深色:hover { background: var(--綠色); }
+.頂欄新增 span { font-size: 16px; vertical-align: -1px; margin-right: 4px; }
+
+main { max-width: 1320px; margin: auto; padding: 0 46px; }
+.主視覺 { height: 397px; position: relative; overflow: hidden; display: flex; align-items: center; padding: 0 7.1%; background: #ecefe7; }
+.主視覺文字 { position: relative; z-index: 2; width: 53%; padding-bottom: 8px; }
+.眉標 { display: flex; align-items: center; gap: 9px; color: var(--綠色); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.狀態點 { width: 7px; height: 7px; border-radius: 50%; background: var(--橘色); box-shadow: 0 0 0 4px #e8a26324; }
+h1 { margin: 22px 0 15px; font-size: clamp(32px, 4vw, 47px); line-height: 1.38; font-weight: 700; letter-spacing: .045em; }
+h1 em { color: var(--綠色); font-style: normal; }
+.主視覺文字 p { margin: 0; color: #72776f; font-size: 13px; letter-spacing: .035em; }
+.文字連結 { display: inline-flex; gap: 12px; align-items: center; margin-top: 24px; padding-bottom: 7px; border-bottom: 1px solid #9bac9c; color: var(--綠色); font-size: 12px; font-weight: 700; }
+.文字連結 span { font-size: 16px; transition: transform .2s; }.文字連結:hover span { transform: translate(2px, 2px); }
+.主視覺圖 { position: absolute; width: 48%; height: 100%; right: 0; top: 0; }
+.圖形圓環 { position: absolute; border: 1px solid #cbd7c7; border-radius: 50%; }
+.圓環一 { width: 385px; height: 385px; top: 31px; left: 85px; }.圓環二 { width: 278px; height: 278px; top: 85px; left: 139px; }
+.圖形卡片 { position: absolute; z-index: 1; width: 184px; height: 105px; padding: 17px; display: flex; flex-direction: column; justify-content: space-between; background: #fff; box-shadow: 0 14px 35px #26372b16; }
+.圖形卡片 span { color: #92988f; font-size: 9px; letter-spacing: .09em; }.圖形卡片 b { font-size: 13px; font-weight: 700; }.圖形卡片 i { position: absolute; top: 14px; right: 16px; color: var(--綠色); font-style: normal; font-size: 16px; }
+.圖卡一 { top: 99px; left: 160px; transform: rotate(-5deg); }.圖卡二 { top: 205px; left: 290px; transform: rotate(5deg); }
+.圖形標籤 { position: absolute; left: 50px; top: 174px; color: #899387; font-size: 11px; line-height: 1.9; transform: rotate(-8deg); }.圖形標籤 strong { color: var(--綠色); font-size: 17px; }
+.裝飾星 { position: absolute; color: #d1945d; }.星一 { left: 365px; top: 82px; font-size: 21px; }.星二 { left: 73px; top: 283px; font-size: 13px; color: var(--綠色); }
+.主視覺底標 { position: absolute; bottom: 18px; left: 7.1%; right: 7.1%; display: flex; justify-content: space-between; color: #92978e; font-size: 9px; letter-spacing: .1em; }
+
+.提示列 { min-height: 53px; margin: 24px 0 52px; padding: 10px 16px; display: flex; align-items: center; gap: 12px; border: 1px solid #e9e3d4; border-radius: 6px; background: #faf8f1; }
+.提示圖示 { width: 17px; height: 17px; flex: 0 0 17px; border-radius: 50%; text-align: center; line-height: 17px; color: #a9763d; background: #f1e4d0; font-size: 11px; font-weight: 700; }
+.提示列 p { flex: 1; margin: 0; color: #77766f; font-size: 10px; line-height: 1.7; }.提示列 strong { color: #77603c; }
+.提示關閉 { width: 28px; height: 28px; border: 0; background: transparent; color: #aaa79d; cursor: pointer; font-size: 19px; }
+.區段標題 { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 25px; }
+.小眉標 { font-size: 9px; letter-spacing: .18em; }.區段標題 h2 { margin: 7px 0 0; font-size: 27px; letter-spacing: .04em; }.標題點 { color: var(--橘色); }
+.資料計數 { display: flex; gap: 8px; align-items: baseline; color: #898b84; font-size: 10px; }.資料計數 strong { color: var(--墨色); font-size: 20px; }
+.工具列 { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; padding: 15px 0; border-top: 1px solid var(--細線); border-bottom: 1px solid var(--細線); }
+.搜尋框 { width: 267px; height: 40px; padding: 0 11px; display: flex; align-items: center; gap: 9px; border: 1px solid #e5e4de; border-radius: 5px; background: #fff; }
+.搜尋框 svg { width: 15px; height: 15px; fill: none; stroke: #93968f; stroke-width: 1.7; }
+.搜尋框 input { width: 100%; min-width: 0; outline: 0; border: 0; color: var(--墨色); font-size: 10px; }.搜尋框 input::placeholder { color: #a4a69f; }
+kbd { padding: 1px 5px; border: 1px solid #e9e9e5; border-radius: 3px; color: #b2b2ac; font: 10px inherit; }
+.篩選群組 { display: flex; align-items: center; gap: 4px; }
+.篩選鈕 { padding: 8px 11px; border: 0; border-radius: 4px; background: transparent; color: #858880; cursor: pointer; font-size: 10px; transition: color .2s, background .2s; }.篩選鈕:hover { color: var(--綠色); }.篩選鈕.篩選中 { background: var(--淡綠); color: var(--綠色); font-weight: 700; }
+.排序選單 { margin-left: auto; display: flex; align-items: center; gap: 8px; color: #969890; font-size: 10px; }.排序選單 select { padding: 7px 23px 7px 9px; border: 1px solid var(--細線); border-radius: 4px; outline: 0; background: white; color: #555a53; font-size: 10px; cursor: pointer; }
+
+.內容版面 { display: grid; grid-template-columns: minmax(0, 1fr) 241px; gap: 26px; padding-top: 22px; }
+.公司網格 { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; align-content: start; }
+.公司卡 { min-height: 235px; padding: 19px 19px 15px; border: 1px solid #e9e8e2; border-radius: 7px; background: #fff; transition: transform .2s, box-shadow .2s, border-color .2s; }
+.公司卡:hover { transform: translateY(-2px); border-color: #d4dfd3; box-shadow: 0 10px 24px #25392c0b; }
+.公司卡頂部 { display: flex; justify-content: space-between; align-items: flex-start; }
+.公司識別 { display: flex; align-items: center; gap: 11px; }
+.公司圖章 { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 11px; background: #eff2eb; color: #48684f; font-size: 12px; font-weight: 800; letter-spacing: .01em; }.公司圖章.色二 { background: #f1ece5; color: #8e6542; }.公司圖章.色三 { background: #edf0f5; color: #526784; }.公司圖章.色四 { background: #f4eded; color: #986760; }
+.公司名稱 { margin: 0; font-size: 14px; font-weight: 700; }.公司代號 { margin-left: 6px; color: #9a9c96; font-size: 9px; font-weight: 500; }.公司產業 { margin-top: 4px; color: #8e918a; font-size: 9px; }
+.收藏鈕 { width: 29px; height: 29px; border: 1px solid transparent; border-radius: 5px; background: transparent; color: #a8aaa4; cursor: pointer; font-size: 17px; }.收藏鈕:hover { border-color: var(--細線); color: var(--綠色); }.收藏鈕.已收藏 { color: #bd8150; }
+.卡片標記 { margin-top: 19px; display: flex; gap: 6px; }.小標籤 { padding: 4px 7px; border-radius: 3px; background: #f6f6f2; color: #83877f; font-size: 8px; }.小標籤.綠標籤 { background: #edf3ed; color: #52755c; }
+.公司卡 h4 { margin: 12px 0 6px; font-size: 12px; line-height: 1.6; }.公司卡摘要 { min-height: 34px; margin: 0; color: #858880; font-size: 9px; line-height: 1.75; }
+.卡片底部 { margin-top: 14px; padding-top: 11px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0ec; }.資料狀態 { color: #a2a49e; font-size: 8px; }.檢視按鈕 { padding: 0; border: 0; background: transparent; color: var(--綠色); font-size: 9px; font-weight: 700; cursor: pointer; }.檢視按鈕 span { margin-left: 4px; font-size: 13px; }
+.新增卡 { min-height: 235px; display: grid; place-content: center; justify-items: center; border: 1px dashed #d8dbd2; border-radius: 7px; background: #f8f8f4; color: #848a80; text-align: center; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }.新增卡:hover { border-color: #91a894; background: #f1f4ed; color: var(--綠色); }.新增圖示 { width: 34px; height: 34px; margin-bottom: 11px; display: grid; place-items: center; border-radius: 50%; background: #e9eee6; color: var(--綠色); font-size: 20px; }.新增卡 strong { font-size: 11px; }.新增卡 small { margin-top: 5px; color: #a2a69d; font-size: 8px; }
+
+.側欄 { display: flex; flex-direction: column; gap: 14px; }.側欄卡片 { padding: 18px; border: 1px solid #e9e8e2; border-radius: 7px; background: #fff; }.側欄卡片標題 { display: flex; align-items: flex-start; justify-content: space-between; }.側欄眉標 { color: #a0a198; font-size: 8px; letter-spacing: .15em; }.側欄卡片 h3 { margin: 5px 0 0; font-size: 15px; }.收藏數 { min-width: 23px; height: 23px; display: grid; place-items: center; border-radius: 50%; background: #f3f3ef; color: #777c72; font-size: 9px; }.收藏卡片 > p { margin: 12px 0; color: #969890; font-size: 9px; line-height: 1.7; }.收藏清單 { border-top: 1px solid #f0f0ec; }.空收藏 { display: block; padding: 13px 0 3px; color: #b0b1ac; font-size: 9px; line-height: 1.7; }.收藏項目 { padding: 10px 0; display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0ec; font-size: 10px; }.收藏項目:last-child { border-bottom: 0; padding-bottom: 0; }.收藏項目 small { color: #a0a29b; font-size: 9px; }
+.指引卡片 { position: relative; overflow: hidden; padding: 20px 18px; background: #293d33; color: #fff; border-color: #293d33; }.指引卡片 .側欄眉標 { color: #afc0ad; }.指引卡片 h3 { margin: 11px 0 16px; font-size: 19px; line-height: 1.5; }.指引圖案 { position: absolute; top: 17px; right: 18px; color: #a9bb9e; font-size: 23px; }.指引卡片 ol { list-style: none; padding: 0; margin: 0; border-top: 1px solid #ffffff25; }.指引卡片 li { padding: 10px 0; display: flex; gap: 11px; border-bottom: 1px solid #ffffff20; color: #d0d9cf; font-size: 9px; }.指引卡片 li span { color: #a8be9c; font-size: 8px; }.文字按鈕 { margin-top: 15px; padding: 0; border: 0; background: transparent; color: #d9e6d5; font-size: 9px; font-weight: 600; cursor: pointer; }.文字按鈕 span { margin-left: 7px; font-size: 14px; }.側欄註記 { padding: 2px 2px 0; color: #9b9e94; font-size: 9px; }.側欄註記 span { margin-right: 5px; color: #c79360; }
+.無結果 { padding: 65px 15px; text-align: center; }.無結果 > span { color: #a3b3a0; font-size: 34px; }.無結果 h3 { margin: 11px 0 4px; font-size: 15px; }.無結果 p { margin: 0 0 18px; color: #90938a; font-size: 10px; }.按鈕淺色 { border: 1px solid var(--細線); background: white; font-size: 10px; }
+footer { min-height: 85px; margin-top: 56px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--細線); color: #9b9d95; font-size: 9px; }.頁尾品牌 { color: var(--墨色); font-size: 13px; }.頁尾品牌 .品牌圖示 { width: 23px; height: 23px; }.頁尾品牌 .品牌圖示 i:nth-child(3) { height: 12px; }
+
+.視窗 { width: min(540px, calc(100% - 32px)); max-height: min(85vh, 760px); padding: 0; overflow: auto; border: 0; border-radius: 10px; color: var(--墨色); box-shadow: 0 24px 90px #101a1438; }.視窗::backdrop { background: #17221bc0; backdrop-filter: blur(3px); }.視窗關閉 { position: sticky; z-index: 2; top: 12px; float: right; width: 33px; height: 33px; margin: 12px 12px -45px 0; border: 1px solid #eaeae5; border-radius: 50%; background: #fff; color: #686d65; font-size: 20px; cursor: pointer; }.視窗內文 { padding: 32px; }.視窗眉標 { color: var(--綠色); font-size: 9px; font-weight: 700; letter-spacing: .13em; }.視窗內文 h2 { margin: 9px 42px 18px 0; font-size: 22px; }.視窗內文 > p { color: #7c8078; font-size: 11px; line-height: 1.9; }.公司詳細資料 { margin: 21px 0; padding: 16px; border-radius: 6px; background: #f4f5f0; }.公司詳細資料 strong { display: block; margin-bottom: 8px; font-size: 11px; }.公司詳細資料 p { margin: 0; color: #777d73; font-size: 10px; line-height: 1.9; }.來源欄 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--細線); color: #92958d; font-size: 9px; line-height: 1.8; }
+.研究表單 { padding: 32px; }.研究表單 h2 { margin: 8px 40px 7px 0; font-size: 22px; }.研究表單 > p { margin: 0 0 22px; color: #858980; font-size: 10px; line-height: 1.8; }.表單欄位 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; }.表單欄位 label { display: flex; flex-direction: column; gap: 7px; color: #5d6259; font-size: 10px; font-weight: 600; }.表單欄位 .全寬 { grid-column: 1 / -1; }.表單欄位 input, .表單欄位 select, .表單欄位 textarea { width: 100%; min-height: 39px; padding: 9px 10px; border: 1px solid #e4e5de; border-radius: 5px; outline: 0; background: #fff; color: var(--墨色); font-size: 10px; }.表單欄位 textarea { min-height: 76px; resize: vertical; }.表單欄位 input:focus, .表單欄位 select:focus, .表單欄位 textarea:focus { border-color: #8ca58e; box-shadow: 0 0 0 3px #eaf1e9; }.表單動作 { margin-top: 20px; display: flex; justify-content: flex-end; gap: 9px; }.表單錯誤 { grid-column: 1/-1; min-height: 14px; margin: 0; color: #a64c3e; font-size: 9px; }
+
+@media (max-width: 1020px) {
+  .頂欄, main { padding-left: 28px; padding-right: 28px; }.主選單 { margin-left: 20px; gap: 24px; }
+  .內容版面 { grid-template-columns: minmax(0, 1fr) 215px; gap: 16px; }.公司網格 { gap: 10px; }.公司卡 { padding: 16px; }.篩選鈕 { padding: 8px; }
+}
+.財務圖表區 { margin: 20px 0 24px; padding: 15px; border: 1px solid #e8e9e2; border-radius: 6px; background: #fff; }.財務圖表區標題 { margin-bottom: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }.財務圖表區標題 h3 { margin: 0; font-size: 13px; }.財務圖表區標題 span { color: #92968d; font-size: 9px; }.財務圖表列表 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }.財務圖表卡 { min-width: 0; padding: 11px; border: 1px solid #eff0eb; border-radius: 5px; background: #fcfcfa; }.財務圖表卡 h4 { margin: 0 0 7px; color: #4f6e54; font-size: 10px; }.財務圖表捲動 { overflow-x: auto; overscroll-behavior-x: contain; }.財務圖表捲動 svg { display: block; max-width: none; height: auto; }.財務圖表卡 p, .財務圖表總說明 { margin: 7px 0 0; color: #92968d; font-size: 8px; line-height: 1.7; }.財務圖表總說明 { margin-top: 12px; }.財務圖表無資料 { margin: 0; padding: 12px; border-radius: 4px; background: #f8f9f6; color: #858b81; font-size: 9px; line-height: 1.8; }
+@media (max-width: 760px) {
+  .頂欄 { height: 67px; padding: 0 20px; }.主選單 { display: none; }.頂欄新增 { min-height: 38px; padding: 0 12px; }
+  main { padding: 0 20px; }.主視覺 { height: 405px; padding: 0 25px; align-items: flex-start; }.主視覺文字 { width: 100%; padding-top: 42px; }.主視覺文字 p { max-width: 340px; line-height: 1.8; }.主視覺圖 { width: 100%; height: 170px; top: auto; bottom: 15px; opacity: .92; transform: scale(.72); transform-origin: 75% 50%; }.主視覺底標 { left: 25px; right: 25px; font-size: 8px; }.主視覺 h1 { font-size: 34px; }
+  .提示列 { margin: 17px 0 38px; align-items: flex-start; }.提示列 p { font-size: 9px; }.區段標題 h2 { font-size: 24px; }.工具列 { gap: 9px; }.搜尋框 { width: 100%; }.篩選群組 { width: 100%; overflow-x: auto; }.篩選鈕 { flex: 0 0 auto; }.排序選單 { margin-left: auto; }.內容版面 { display: flex; flex-direction: column-reverse; }.側欄 { display: grid; grid-template-columns: 1fr 1fr; }.側欄註記 { display: none; }.公司網格 { width: 100%; }.側欄卡片 { padding: 14px; }
+  footer { min-height: 75px; margin-top: 35px; gap: 10px; }footer > span:nth-child(2) { display: none; }
+}
+@media (max-width: 500px) {
+  .公司網格 { grid-template-columns: 1fr; }.公司卡 { min-height: 220px; }.新增卡 { min-height: 150px; }.側欄 { grid-template-columns: 1fr; }.收藏卡片 { order: 2; }.指引卡片 { order: 1; }.表單欄位 { grid-template-columns: 1fr; }.表單欄位 .全寬 { grid-column: auto; }.視窗內文, .研究表單 { padding: 26px 22px; }.資料計數 { font-size: 9px; }.主視覺圖 { right: -50px; transform: scale(.62); transform-origin: 70% 50%; }
+}
+@media (max-width: 760px) {
+  .財務圖表區 { padding: 12px; }
+  .財務圖表列表 { grid-template-columns: 1fr; }
+}
+
+/* 研究報告匯入與分析結果 */
+.匯入區 { margin: 45px 0 54px; padding: 30px; border: 1px solid #e8e7e0; border-radius: 8px; background: #fff; }
+.匯入標題列 { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.匯入標題列 h2 { margin: 7px 0 6px; font-size: 25px; letter-spacing: .04em; }
+.匯入標題列 p { margin: 0; color: #858980; font-size: 10px; line-height: 1.8; }
+.本機標記 { flex: 0 0 auto; display: flex; align-items: center; gap: 8px; padding: 8px 11px; border-radius: 4px; background: #f1f4ed; color: #57735c; font-size: 9px; }
+.本機標記 .狀態點 { width: 6px; height: 6px; }
+.公司歸屬列 { display: flex; align-items: center; gap: 10px; margin: 22px 0 12px; color: #6f746b; font-size: 10px; }
+.公司歸屬列 select { min-width: 155px; padding: 8px 24px 8px 10px; border: 1px solid var(--細線); border-radius: 4px; outline: 0; background: white; color: #50574e; font-size: 10px; }
+.公司歸屬列 small { color: #9a9d95; font-size: 9px; }
+.辨識說明 { margin: 9px 0 0; color: #979a92; font-size: 9px; line-height: 1.7; }
+.投件區 { min-height: 168px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; border: 1px dashed #cad4c8; border-radius: 6px; background: #fafbf8; color: #747a71; text-align: center; cursor: pointer; transition: border .2s, background .2s; }
+.投件區:hover, .投件區.拖曳中 { border-color: #66886b; background: #f2f6f0; }
+.投件區 input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; clip-path: inset(50%); }
+.上傳圖示 { width: 32px; height: 32px; display: grid; place-items: center; margin-bottom: 2px; border-radius: 50%; background: #eaf0e8; color: var(--綠色); font-size: 19px; }
+.投件區 strong { color: #39493b; font-size: 11px; }.投件區 > span:not(.上傳圖示) { font-size: 9px; }
+.投件區 .上傳備註 { margin-top: 4px; color: #a0a39b; font-size: 8px !important; }
+.匯入狀態 { min-height: 0; color: #82877e; font-size: 9px; }.匯入狀態:not(:empty) { padding: 10px 0 2px; }
+.報告區標題 { margin: 25px 0 12px; display: flex; align-items: baseline; justify-content: space-between; }
+.報告區標題 h3 { margin: 0; font-size: 13px; }.報告區標題 span { color: #a0a29a; font-size: 9px; }
+.匯入報告清單 { display: grid; gap: 12px; }
+.報告卡 { overflow: hidden; border: 1px solid #e9e9e3; border-radius: 6px; background: #fff; }
+.報告卡頂部 { min-height: 55px; padding: 11px 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: #fafaf7; border-bottom: 1px solid #efefea; }
+.報告檔案識別 { min-width: 0; display: flex; align-items: center; gap: 10px; }
+.檔案圖示 { width: 29px; height: 33px; flex: 0 0 29px; display: grid; place-items: center; border-radius: 4px; background: #edf2eb; color: #52745b; font-size: 8px; font-weight: 700; }
+.報告檔名 { overflow: hidden; color: #424840; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }.報告時間 { margin-top: 4px; color: #a0a29b; font-size: 8px; }
+.報告公司選擇 { display: flex; align-items: center; gap: 7px; color: #92968d; font-size: 9px; }.報告公司選擇 select { max-width: 145px; padding: 7px 20px 7px 8px; border: 1px solid #e8e8e2; border-radius: 4px; background: #fff; color: #576053; font-size: 9px; }
+.報告辨識欄 { display: flex; align-items: flex-end; justify-content: flex-end; gap: 9px; }.報告辨識欄 label { display: flex; flex-direction: column; gap: 5px; color: #92968d; font-size: 8px; }.報告辨識欄 input, .報告辨識欄 select { width: 142px; height: 30px; padding: 5px 8px; border: 1px solid #e8e8e2; border-radius: 4px; outline: 0; background: #fff; color: #576053; font-size: 9px; }.報告辨識欄 input[type="date"] { width: 132px; }.報告辨識欄 input:focus, .報告辨識欄 select:focus { border-color: #91a992; box-shadow: 0 0 0 2px #edf3ed; }
+.報告卡內容 { padding: 16px; }.分析小標 { margin: 0 0 8px; color: #5c765f; font-size: 9px; font-weight: 700; }
+.重點清單 { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }.重點清單 li { position: relative; padding-left: 14px; color: #737970; font-size: 9px; line-height: 1.75; }.重點清單 li::before { content: ''; position: absolute; top: 6px; left: 1px; width: 5px; height: 5px; border-radius: 50%; background: #d39c6a; }
+.券商觀點清單 { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }.券商觀點清單 li { display: grid; grid-template-columns: max-content 1fr; align-items: start; gap: 7px; color: #626a60; font-size: 9px; line-height: 1.8; }.觀點類別標籤 { display: inline-block; padding: 2px 6px; border-radius: 3px; background: #eef3eb; color: #55735a; font-size: 8px; font-weight: 700; white-space: nowrap; }.觀點未辨識 { margin: 0; padding: 11px 12px; border-radius: 4px; background: #faf8f3; color: #8b806d; font-size: 9px; line-height: 1.8; }.觀點補充欄 { margin-top: 13px; display: grid; gap: 6px; color: #858a80; font-size: 8px; }.觀點補充欄 textarea { min-height: 68px; padding: 9px 10px; resize: vertical; border: 1px solid #e8e9e2; border-radius: 4px; outline: 0; color: #596157; font-size: 9px; line-height: 1.7; }.觀點補充欄 textarea:focus { border-color: #91a992; box-shadow: 0 0 0 2px #edf3ed; }.數字區塊 { margin-top: 18px; padding-top: 14px; border-top: 1px solid #efefea; }
+.數字表格外框 { margin-top: 16px; overflow: auto; border: 1px solid #efefea; border-radius: 5px; }.數字表格 { width: 100%; border-collapse: collapse; text-align: left; }.數字表格 th { padding: 8px 10px; background: #f8f8f5; color: #969990; font-size: 8px; font-weight: 600; white-space: nowrap; }.數字表格 td { padding: 9px 10px; border-top: 1px solid #f0f0ec; color: #747970; font-size: 8px; line-height: 1.7; vertical-align: top; }.數字表格 td:first-child { width: 100px; color: #4f6d55; font-weight: 600; }.數字表格 td:nth-child(2) { width: 115px; color: #333a33; font-weight: 700; white-space: nowrap; }.數字表格 td:nth-child(3) { min-width: 260px; }.數字表格 td:nth-child(4) { min-width: 180px; color: #788276; }
+.無數字 { margin: 13px 0 0; padding: 12px; border-radius: 4px; background: #f8f8f5; color: #92958d; font-size: 9px; line-height: 1.7; }
+.報告卡底部 { padding: 11px 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid #efefea; }.報告狀態 { color: #9b9e96; font-size: 8px; }.報告動作 { display: flex; gap: 7px; }.文字檔按鈕 { padding: 7px 10px; border: 1px solid #e6e7e0; border-radius: 4px; background: #fff; color: #5f6c5c; font-size: 8px; font-weight: 600; cursor: pointer; }.文字檔按鈕:hover { border-color: #9bb29a; background: #f6f9f4; }.文字檔按鈕:disabled { color: #b6b8b2; cursor: not-allowed; }
+.匯入說明 { margin-top: 16px; padding: 12px 14px; display: flex; gap: 10px; border-radius: 5px; background: #f8f7f1; color: #85847b; font-size: 8px; line-height: 1.7; }.匯入說明 strong { flex: 0 0 auto; color: #706b5d; }
+.匯入報告清單:empty { display: none; }
+.人工智慧設定 { min-width: 0; margin: 18px 0; padding: 14px 15px; border: 1px solid #e6e9e2; border-radius: 5px; background: #fafbf8; }.人工智慧設定 legend { padding: 0 5px; color: #54725a; font-size: 10px; font-weight: 700; }.人工智慧設定欄 { display: grid; grid-template-columns: 150px minmax(150px, 1fr) minmax(200px, 1.4fr); gap: 10px; }.人工智慧設定欄 label { min-width: 0; display: grid; gap: 5px; color: #7c8278; font-size: 8px; }.人工智慧設定欄 input, .人工智慧設定欄 select { width: 100%; height: 34px; padding: 6px 9px; border: 1px solid #e4e7df; border-radius: 4px; outline: 0; background: #fff; color: #536052; font-size: 9px; }.人工智慧設定欄 input:focus, .人工智慧設定欄 select:focus { border-color: #91a992; box-shadow: 0 0 0 2px #edf3ed; }.人工智慧說明 { margin: 9px 0 0; color: #8c9189; font-size: 8px; line-height: 1.8; }.人工智慧摘要標題 { margin-bottom: 9px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 7px; }.人工智慧摘要標題 .分析小標 { margin: 0; }.人工智慧摘要標題 span { color: #898e85; font-size: 8px; }.摘要編輯欄, .公司摘要編輯欄 { margin: 0 0 14px; display: grid; gap: 6px; color: #7b8278; font-size: 8px; }.摘要編輯欄 textarea, .公司摘要編輯欄 textarea { min-height: 120px; padding: 10px; resize: vertical; border: 1px solid #e8e9e2; border-radius: 4px; outline: 0; color: #596157; font-size: 9px; line-height: 1.8; }.摘要編輯欄 textarea:focus, .公司摘要編輯欄 textarea:focus { border-color: #91a992; box-shadow: 0 0 0 2px #edf3ed; }.可編輯觀點清單 { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }.可編輯觀點清單 > li { padding: 11px; border: 1px solid #edf0e9; border-radius: 5px; background: #fcfcfa; }.觀點編輯欄 { display: grid; gap: 8px; }.觀點編輯欄 label { display: grid; gap: 5px; color: #858a81; font-size: 8px; }.觀點編輯欄 input, .觀點編輯欄 textarea { width: 100%; padding: 8px; border: 1px solid #e7e9e2; border-radius: 4px; outline: 0; background: #fff; color: #5b6259; font-size: 9px; line-height: 1.7; }.觀點編輯欄 textarea { min-height: 76px; resize: vertical; }.觀點編輯欄 label:nth-child(3) textarea { min-height: 48px; color: #858b82; }.觀點編輯欄 input:focus, .觀點編輯欄 textarea:focus { border-color: #91a992; box-shadow: 0 0 0 2px #edf3ed; }.內容新增鈕, .內容刪除鈕 { margin-top: 9px; padding: 6px 9px; border: 1px solid #e3e7df; border-radius: 4px; background: #fff; color: #55715a; font-size: 8px; cursor: pointer; }.內容刪除鈕 { color: #a06a5b; }.內容新增鈕:hover { background: #f3f7f1; }.內容刪除鈕:hover { background: #fbf4f1; }
+.公司報告總覽 { margin: 22px 0; }.公司報告標題 { margin-bottom: 12px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }.公司報告標題 h3 { margin: 0; font-size: 14px; }.公司報告標題 span { color: #92968d; font-size: 9px; }.公司報告列表 { display: grid; gap: 11px; }.公司報告項目 { padding: 15px; border: 1px solid #e8e9e2; border-radius: 6px; background: #fff; }.公司報告項目標題 { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 7px 12px; padding-bottom: 11px; border-bottom: 1px solid #efefea; }.公司報告項目標題 div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 9px; }.公司報告項目標題 strong { color: #385b41; font-size: 11px; }.公司報告項目標題 span { color: #5b6259; font-size: 10px; font-weight: 600; }.公司報告項目標題 small { max-width: 100%; overflow: hidden; color: #9b9e96; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }.公司報告項目 h4 { margin: 12px 0 8px; font-size: 10px; }.公司報告觀點 { margin: 0; padding-left: 18px; color: #70766e; font-size: 9px; line-height: 1.8; }.公司報告觀點 li { padding: 2px 0; }.公司報告觀點 .觀點類別標籤 { margin-right: 6px; }.公司報告補充 { margin: 11px 0 0; padding: 10px; display: grid; gap: 5px; border-radius: 4px; background: #f8f9f6; color: #697267; font-size: 9px; line-height: 1.8; }.公司報告補充 strong { color: #55735a; font-size: 8px; }.公司報告無資料 { margin: 0; color: #94978f; font-size: 9px; }.公司報告數字 { margin-top: 11px; padding-top: 10px; border-top: 1px solid #f0f0ec; }.公司報告數字 summary { color: #52745b; font-size: 9px; font-weight: 600; cursor: pointer; }.公司報告數字 ul { margin: 9px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; }.公司報告數字 li { display: grid; gap: 4px; padding: 9px; border-radius: 4px; background: #f8f9f6; }.公司報告數字 li strong { color: #4a684e; font-size: 9px; }.公司報告數字 li span, .公司報告數字 li small { color: #777d73; font-size: 8px; line-height: 1.7; }.公司報告數字 li small { color: #9a8a73; }.公司報告空狀態 { margin: 20px 0; padding: 18px; border: 1px dashed #d8ded4; border-radius: 5px; background: #fafbf8; color: #888e84; font-size: 10px; line-height: 1.8; }
+@media (max-width: 760px) {
+  .匯入區 { margin: 32px 0 40px; padding: 21px 17px; }.匯入標題列 { align-items: flex-start; flex-direction: column; gap: 12px; }.匯入標題列 h2 { font-size: 22px; }.公司歸屬列 { flex-wrap: wrap; gap: 8px; }.投件區 { min-height: 155px; padding: 16px; }.報告卡頂部 { align-items: flex-start; flex-direction: column; }.報告辨識欄 { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }.報告辨識欄 label:last-child { grid-column: 1/-1; }.報告辨識欄 input, .報告辨識欄 select, .報告辨識欄 input[type="date"] { width: 100%; }.報告卡內容 { padding: 12px; }.報告卡底部 { align-items: flex-start; flex-direction: column; }.報告動作 { width: 100%; }.文字檔按鈕 { flex: 1; }.數字表格 td:nth-child(3) { min-width: 190px; }.數字表格 td:nth-child(4) { min-width: 155px; }.公司報告項目 { padding: 12px; }
+}
+
+@media (max-width: 760px) {
+  .人工智慧設定欄 { grid-template-columns: 1fr; }
+  .人工智慧設定欄 .金鑰欄 { grid-column: auto; }
+  .財務圖表列表 { grid-template-columns: 1fr; }
+}
+

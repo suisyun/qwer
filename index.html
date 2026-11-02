@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <meta name="description" content="彙整台灣公司研究資料、分析重點與引用來源。">
+  <title>研析島｜台灣公司研究資料站</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="頂欄">
+    <a class="品牌" href="#首頁" aria-label="研析島首頁">
+      <span class="品牌圖示" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>研析島<span class="品牌副標">台灣公司研究筆記</span></span>
+    </a>
+    <nav class="主選單" aria-label="主要導覽">
+      <a class="選單目前" href="#研究總覽">研究總覽</a>
+      <a href="#匯入研究">匯入報告</a>
+      <a href="#公司清單">公司清單</a>
+      <a href="#使用說明">使用說明</a>
+    </nav>
+    <button class="按鈕 按鈕深色 頂欄新增" id="新增資料按鈕" type="button"><span aria-hidden="true">＋</span> 新增研究</button>
+  </header>
+
+  <main id="首頁">
+    <section class="主視覺" id="研究總覽">
+      <div class="主視覺文字">
+        <div class="眉標"><span class="狀態點"></span> 台灣公司研究資料站</div>
+        <h1>看懂一家公司，<br><em>從整理好資訊開始。</em></h1>
+        <p>把券商看法、產業脈絡與資料來源放在一起，讓每一次判斷都有跡可循。</p>
+        <a class="文字連結" href="#公司清單">探索公司資料 <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="主視覺圖" aria-hidden="true">
+        <div class="圖形圓環 圓環一"></div><div class="圖形圓環 圓環二"></div>
+        <div class="圖形卡片 圖卡一"><span>產業趨勢</span><b>從脈絡開始</b><i>↗</i></div>
+        <div class="圖形卡片 圖卡二"><span>公司研究</span><b>留住每個觀點</b><i>＋</i></div>
+        <div class="圖形標籤">研究的起點<br><strong>在這裡。</strong></div>
+        <span class="裝飾星 星一">✳</span><span class="裝飾星 星二">✳</span>
+      </div>
+      <div class="主視覺底標"><span>01 / 研究資料</span><span>整理・比對・追蹤</span></div>
+    </section>
+
+    <section class="提示列" aria-label="資料狀態">
+      <span class="提示圖示" aria-hidden="true">i</span>
+      <p><strong>目前為展示範例</strong>　公司研究方向僅示範資料整理方式，尚未連接外部報告或即時資訊。新增的筆記會保存在這台裝置的瀏覽器中。</p>
+      <button id="關閉提示" class="提示關閉" type="button" aria-label="關閉提示">×</button>
+    </section>
+
+    <section class="匯入區" id="匯入研究">
+      <div class="匯入標題列">
+        <div><div class="眉標 小眉標">把報告變成自己的研究資料</div><h2>匯入研究報告<span class="標題點">.</span></h2><p>選取 PDF、文字或 CSV 檔，保留完整的券商看法摘錄，並將營收等財務數字整理成圖表。</p></div>
+        <div class="本機標記"><span class="狀態點"></span> 本機讀取・雲端分析</div>
+      </div>
+      <label class="公司歸屬列" for="匯入公司"><span>將報告歸入公司</span><select id="匯入公司"><option value="">稍後再選</option></select><small>每份報告也能各自調整</small></label>
+      <fieldset class="人工智慧設定">
+        <legend>人工智慧研究報告整理設定</legend>
+        <div class="人工智慧設定欄">
+          <label>服務提供者<select id="人工智慧服務"><option value="openai">GPT</option><option value="gemini">Gemini</option></select></label>
+          <label>模型名稱<input id="人工智慧模型" type="text" value="gpt-5.4-mini" maxlength="80" autocomplete="off"></label>
+          <label class="金鑰欄">API 金鑰<input id="人工智慧金鑰" type="password" placeholder="貼上你自己的 API 金鑰" autocomplete="off"></label>
+        </div>
+        <p class="人工智慧說明">設定只留在目前開啟的頁面，不會保存到瀏覽器儲存。送出分析時，擷取出的完整報告文字會傳給所選服務；API 使用可能另外計費。若要公開或多人使用，請改用安全的伺服器端金鑰。</p>
+      </fieldset>
+      <label class="投件區" id="投件區" for="報告檔案">
+        <input id="報告檔案" type="file" accept=".pdf,.txt,.csv,application/pdf,text/plain,text/csv" multiple>
+        <span class="上傳圖示" aria-hidden="true">↑</span>
+        <strong>把報告拖曳到這裡，或點選檔案</strong>
+        <span>支援 PDF、TXT、CSV，可一次選取多份</span>
+        <span class="上傳備註">文字型 PDF 可直接擷取；掃描影像需先經文字辨識。首次解析 PDF 需要網路載入解析工具。</span>
+      </label>
+      <p class="辨識說明">匯入後會呼叫上方選定的人工智慧整理券商評等、目標價、預估調整、投資論點、展望與風險，並擷取財務數字。請確認券商與日期，摘要及看法條目都可手動增刪修改。</p>
+      <div class="匯入狀態" id="匯入狀態" aria-live="polite"></div>
+      <div class="報告區標題"><h3>券商看法與數字摘錄</h3><span id="報告數量">尚無匯入報告</span></div>
+      <div class="匯入報告清單" id="匯入報告清單"></div>
+      <div class="匯入說明"><strong>資料說明</strong><span>報告檔案由本機讀取；進行人工智慧整理時，擷取出的文字會傳送到你選擇的服務。金鑰不會寫入網站儲存，但純網頁無法安全保護金鑰，請勿把此版本公開分享。模型摘要可能有錯，請核對原始報告。<br>本機累計保存全文約 70 萬字元，請另行下載備份。</span></div>
+    </section>
+
+    <section class="資料區" id="公司清單">
+      <div class="區段標題">
+        <div><div class="眉標 小眉標">從公司開始</div><h2>研究資料庫<span class="標題點">.</span></h2></div>
+        <div class="資料計數"><strong id="公司數量">0</strong><span>家追蹤公司</span></div>
+      </div>
+      <div class="工具列">
+        <label class="搜尋框" for="搜尋欄">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.7"></circle><path d="m16 16 4.2 4.2"></path></svg>
+          <input id="搜尋欄" type="search" placeholder="搜尋公司、代號或研究方向…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="篩選群組" id="產業篩選" aria-label="依產業篩選">
+          <button class="篩選鈕 篩選中" data-產業="全部" type="button">全部</button>
+          <button class="篩選鈕" data-產業="半導體" type="button">半導體</button>
+          <button class="篩選鈕" data-產業="電子代工" type="button">電子代工</button>
+          <button class="篩選鈕" data-產業="金融" type="button">金融</button>
+          <button class="篩選鈕" data-產業="航運" type="button">航運</button>
+          <button class="篩選鈕" data-產業="其他" type="button">其他</button>
+        </div>
+        <label class="排序選單" for="排序方式"><span>排序</span>
+          <select id="排序方式"><option value="名稱">公司名稱</option><option value="新增">最近新增</option></select>
+        </label>
+      </div>
+
+      <div class="內容版面">
+        <div class="公司網格" id="公司網格" aria-live="polite"></div>
+        <aside class="側欄">
+          <section class="側欄卡片 收藏卡片">
+            <div class="側欄卡片標題"><div><span class="側欄眉標">我的公司清單</span><h3>我的追蹤</h3></div><span class="收藏數" id="收藏數">0</span></div>
+            <p>收藏公司會出現在這裡，方便你接續研究。</p>
+            <div class="收藏清單" id="收藏清單"><span class="空收藏">點選公司卡片上的書籤來收藏。</span></div>
+          </section>
+          <section class="側欄卡片 指引卡片" id="使用說明">
+            <span class="指引圖案" aria-hidden="true">↗</span>
+            <span class="側欄眉標">研究整理流程</span>
+            <h3>讓資料，<br>變成自己的觀點。</h3>
+            <ol><li><span>01</span> 新增公司研究筆記</li><li><span>02</span> 記錄來源與研究日期</li><li><span>03</span> 回來比對觀點變化</li></ol>
+            <button class="文字按鈕" id="指引新增按鈕" type="button">建立第一筆筆記 <span aria-hidden="true">→</span></button>
+          </section>
+          <div class="側欄註記"><span>✳</span> 好的研究，從好好記錄開始。</div>
+        </aside>
+      </div>
+      <div class="無結果" id="無結果" hidden><span aria-hidden="true">⌕</span><h3>找不到符合的公司</h3><p>試試其他關鍵字或產業分類。</p><button class="按鈕 按鈕淺色" id="清除篩選" type="button">清除搜尋條件</button></div>
+    </section>
+    <footer><a class="品牌 頁尾品牌" href="#首頁"><span class="品牌圖示" aria-hidden="true"><i></i><i></i><i></i></span><span>研析島</span></a><span>資料整理工具・研究判斷由你做主</span><span>© 2026 研析島</span></footer>
+  </main>
+
+  <dialog id="研究視窗" class="視窗">
+    <form method="dialog"><button class="視窗關閉" aria-label="關閉視窗">×</button></form>
+    <div id="視窗內容"></div>
+  </dialog>
+</body>
+</html>
