@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="用幾分鐘整理你對台股的看法，完成個人投資信心問卷。">
+  <title>台股投資人信心調查｜把市場感受說清楚</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="頁首">
+    <a class="品牌" href="#首頁" aria-label="回到首頁">
+      <span class="品牌圖示" aria-hidden="true">市</span>
+      <span>島嶼投資觀察</span>
+    </a>
+    <div class="頁首標記"><span class="狀態點"></span> 台股投資人信心調查</div>
+  </header>
+
+  <main>
+    <section class="首頁 畫面" id="首頁" aria-labelledby="主標題">
+      <div class="首頁文字">
+        <p class="眉題"><span class="眉題線"></span> 一份給投資人的小調查</p>
+        <h1 id="主標題">市場每天在變，<br><span>你的看法也值得被聽見。</span></h1>
+        <p class="首頁說明">花幾分鐘整理你對台股的感受與投資想法。完成後，你會得到一份只屬於自己的信心摘要。</p>
+        <div class="首頁操作">
+          <button class="按鈕 按鈕主要" id="開始填答" type="button">開始填答 <span aria-hidden="true">→</span></button>
+          <span class="所需時間"><span aria-hidden="true">◷</span> 約 2 分鐘</span>
+        </div>
+        <div class="隱私提示"><span aria-hidden="true">◇</span> 匿名調查・不收集姓名或聯絡方式</div>
+      </div>
+
+      <section class="首頁圖卡 VIX圖卡" aria-labelledby="VIX標題">
+        <div class="圖卡標頭"><span id="VIX標題">VIX 恐慌指數</span><span class="示意標籤">日 K 線</span></div>
+        <div class="刻度數字"><strong id="VIX收盤">—</strong><span id="VIX漲跌">正在載入</span></div>
+        <div class="K線圖" id="VIX圖表" role="img" aria-label="VIX 恐慌指數日 K 線圖，琥珀色記號標示問卷回答日期。">正在載入 VIX 日線資料……</div>
+        <div class="圖卡刻度"><span id="VIX起點">—</span><span id="VIX終點">—</span></div>
+        <div class="圖例列">
+          <span><i class="圖例色塊 圖例上漲"></i>恐慌升高</span>
+          <span><i class="圖例色塊 圖例下跌"></i>恐慌降低</span>
+          <span><i class="圖例標記"></i>問卷回答日</span>
+        </div>
+        <p class="圖表說明">日線來源：<a href="https://www.cboe.com/tradable_products/vix/vix_historical_data" target="_blank" rel="noopener noreferrer">芝加哥選擇權交易所</a>；每日更新。</p>
+        <p class="圖表說明" id="VIX說明">問卷日期以台灣日期計算。</p>
+      </section>
+
+      <div class="首頁底部">
+        <span>沒有標準答案，只有真實想法。</span>
+        <span class="底部裝飾" aria-hidden="true">✳</span>
+      </div>
+    </section>
+
+    <section class="問卷 畫面 隱藏" id="問卷" aria-labelledby="問卷標題">
+      <div class="問卷欄">
+        <button class="文字按鈕" id="回首頁" type="button"><span aria-hidden="true">←</span> 回到介紹</button>
+        <div class="進度區">
+          <div class="進度文字"><span id="目前題數">第 1 題，共 5 題</span><span id="進度百分比">20%</span></div>
+          <div class="進度底條"><div class="進度完成" id="進度完成"></div></div>
+        </div>
+        <div class="題目卡">
+          <p class="題目分類" id="題目分類">市場展望</p>
+          <h2 id="問卷標題">你怎麼看接下來三個月的台股？</h2>
+          <p class="題目補充" id="題目補充">依照你現在的直覺選擇即可，沒有對錯。</p>
+          <div class="選項列表" id="選項列表"></div>
+          <div class="題目操作">
+            <button class="按鈕 按鈕淡" id="上一題" type="button" disabled>上一題</button>
+            <button class="按鈕 按鈕主要" id="下一題" type="button" disabled>下一題 <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+        <p class="送出狀態 隱藏" id="送出狀態" role="status" aria-live="polite"></p>
+        <p class="問卷註記"><span aria-hidden="true">▱</span> 送出後，匿名回答會儲存於調查資料庫。</p>
+      </div>
+    </section>
+
+    <section class="結果 畫面 隱藏" id="結果" aria-labelledby="結果標題" aria-live="polite">
+      <div class="結果欄">
+        <p class="眉題"><span class="眉題線"></span> 你的答題摘要</p>
+        <h2 id="結果標題">謝謝你分享看法。</h2>
+        <p class="結果引言">你的匿名回答已儲存。這份摘要整理了你此刻對台股的感受，市場看法會隨時間改變。</p>
+        <div class="結果卡">
+          <div class="分數區">
+            <div class="分數環" id="分數環" role="img" aria-label="個人信心分數">
+              <div class="分數中心"><strong id="信心分數">0</strong><span>個人信心分數</span></div>
+            </div>
+            <div class="分數說明"><span class="結果標籤" id="結果標籤">審慎觀察</span><p id="結果描述">每個人的節奏不同，依照自己的計畫穩步前進。</p></div>
+          </div>
+          <div class="摘要區">
+            <h3>你的回答</h3>
+            <dl id="回答摘要"></dl>
+          </div>
+        </div>
+        <section class="群體摘要" aria-labelledby="群體摘要標題">
+          <h3 id="群體摘要標題">回答當日與整體統計</h3>
+          <div class="群體指標">
+            <div class="群體指標項目">
+              <span>問卷日期 VIX 收盤</span>
+              <strong id="結果VIX">載入中</strong>
+              <small id="結果VIX日期">正在讀取最新可用日線……</small>
+            </div>
+            <div class="群體指標項目">
+              <span>問卷平均信心分數</span>
+              <strong id="全體平均分數">統計中</strong>
+              <small id="全體平均說明">正在計算匿名回覆彙總……</small>
+            </div>
+          </div>
+        </section>
+        <p class="結果免責">此分數僅反映你的個人回答，不代表全體投資人調查結果，也不是投資建議。</p>
+        <button class="按鈕 按鈕主要" id="重新填答" type="button">再填一次 <span aria-hidden="true">↻</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="頁尾"><span>島嶼投資觀察</span><span>讓每一份市場感受，都有被整理的地方。</span></footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+  color: #172c31;
+  background: #f5f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --墨綠: #173b3a;
+  --薄荷: #81b8a5;
+  --淺底: #f5f4ef;
+  --輔助字: #74817e;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: var(--淺底); }
+button { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible + .選項卡 { outline: 3px solid #d59156; outline-offset: 3px; }
+.隱藏 { display: none !important; }
+
+.頁首, .頁尾 { width: min(1160px, calc(100% - 64px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.頁首 { height: 82px; border-bottom: 1px solid #e7e7df; }
+.品牌 { display: inline-flex; gap: 11px; align-items: center; color: var(--墨綠); font-size: 14px; font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+.品牌圖示 { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 10px 10px 10px 3px; background: var(--墨綠); color: white; font-size: 15px; }
+.頁首標記 { color: #63716e; font-size: 12px; letter-spacing: .04em; }
+.狀態點, .小圓點 { display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #7eac91; vertical-align: 1px; }
+
+main { min-height: calc(100vh - 144px); }
+.首頁 { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; width: min(1080px, calc(100% - 64px)); min-height: 645px; margin: 0 auto; padding: 55px 0 85px; gap: 60px; }
+.首頁文字 { padding: 0 0 10px; }
+.眉題 { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: #557c70; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.眉題線 { width: 23px; height: 1px; background: #83a99a; }
+h1 { max-width: 580px; margin: 0; color: #193739; font-size: clamp(36px, 4.5vw, 58px); font-weight: 700; letter-spacing: -.055em; line-height: 1.32; }
+h1 span { color: #769d8e; }
+.首頁說明 { max-width: 445px; margin: 24px 0 0; color: #727d79; font-size: 15px; line-height: 1.95; }
+.首頁操作 { display: flex; align-items: center; gap: 24px; margin-top: 32px; }
+.按鈕 { min-height: 49px; padding: 0 21px; border: 0; border-radius: 7px; cursor: pointer; font-size: 14px; font-weight: 600; transition: transform .18s ease, background .18s ease, opacity .18s ease; }
+.按鈕:hover:not(:disabled) { transform: translateY(-2px); }
+.按鈕主要 { display: inline-flex; align-items: center; justify-content: center; gap: 20px; background: var(--墨綠); color: white; box-shadow: 0 7px 18px #173b3a1b; }
+.按鈕主要:hover:not(:disabled) { background: #24514c; }
+.按鈕主要 span { font-size: 18px; font-weight: 400; }
+.按鈕淡 { border: 1px solid #dfe4dd; background: transparent; color: #55635f; }
+.按鈕:disabled { opacity: .38; cursor: not-allowed; }
+.所需時間 { color: #7c8782; font-size: 13px; }
+.所需時間 span { margin-right: 5px; font-size: 17px; }
+.隱私提示 { margin-top: 25px; color: #89928d; font-size: 12px; }
+.隱私提示 span { margin-right: 7px; color: #658e7d; }
+
+.首頁圖卡 { position: relative; min-height: 345px; padding: 25px 27px 20px; overflow: hidden; border: 1px solid #e7e8e0; border-radius: 10px; background: #fff; box-shadow: 0 25px 70px #193b3510; }
+.圖卡標頭 { display: flex; align-items: center; justify-content: space-between; color: #52605b; font-size: 12px; font-weight: 600; }
+.示意標籤 { padding: 4px 8px; border-radius: 4px; background: #f0f3ed; color: #829087; font-size: 10px; }
+.刻度數字 { display: flex; align-items: baseline; gap: 12px; margin-top: 22px; }
+.刻度數字 strong { color: var(--墨綠); font-size: 44px; font-weight: 500; letter-spacing: -.06em; }
+.刻度數字 span { color: #95a09b; font-size: 11px; }
+.刻度圖 { position: relative; height: 138px; margin-top: 5px; }
+.刻度格線 { position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent 44px, #edf0eb 45px, transparent 46px); }
+.刻度圖 svg { position: relative; width: 100%; height: 100%; overflow: visible; }
+.圖表區域 { fill: url(#區域漸層); }
+.圖表線 { fill: none; stroke: #6da08c; stroke-width: 3; vector-effect: non-scaling-stroke; }
+.刻度圖 circle { fill: #fff; stroke: #6da08c; stroke-width: 3; vector-effect: non-scaling-stroke; }
+.圖卡刻度 { display: flex; justify-content: space-between; margin-top: 4px; color: #929c96; font-size: 10px; }
+.圖卡註記 { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eff0eb; color: #7d8983; font-size: 11px; }
+.圖卡註記 .小圓點 { width: 6px; height: 6px; margin-right: 5px; }
+.VIX圖卡 { min-height: 390px; padding: 22px 20px 16px; }
+.VIX圖卡 .刻度數字 { gap: 10px; margin-top: 11px; }
+.VIX圖卡 .刻度數字 strong { font-size: 34px; }
+.VIX圖卡 .刻度數字 span { font-size: 11px; }
+.VIX圖卡 #VIX漲跌.VIX上漲 { color: #bd6553; }
+.VIX圖卡 #VIX漲跌.VIX下跌 { color: #4b8e72; }
+.K線圖 { display: grid; min-height: 184px; margin-top: 7px; place-items: center; color: #89958f; font-size: 12px; }
+.K線圖 svg { display: block; width: 100%; height: 184px; overflow: visible; }
+.K線圖 text { fill: #8d9992; font-family: inherit; font-size: 11px; }
+.K線圖 .圖表格線 { stroke: #edf0eb; stroke-width: 1; }
+.K線圖 .圖表影線 { stroke-width: 1.25; }
+.K線圖 .圖表燭身 { stroke-width: .6; }
+.K線圖 .圖表事件線 { stroke: #d69b50; stroke-dasharray: 3 3; stroke-width: 1; }
+.K線圖 .圖表事件點 { fill: #d69b50; stroke: #fff; stroke-width: 1.5; }
+.圖例列 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin-top: 6px; color: #7d8983; font-size: 10px; }
+.圖例列 span { display: inline-flex; align-items: center; gap: 5px; }
+.圖例色塊 { width: 7px; height: 7px; border-radius: 1px; }
+.圖例上漲 { background: #d97460; }
+.圖例下跌 { background: #4b9a79; }
+.圖例標記 { width: 7px; height: 7px; border: 2px solid #d69b50; border-radius: 50%; }
+.圖表說明 { margin: 12px 0 0; color: #9aa39d; font-size: 9px; line-height: 1.6; }
+.圖表說明 + .圖表說明 { margin-top: 3px; }
+.圖表說明 a { color: #668b7b; text-decoration: underline; text-underline-offset: 2px; }
+.首頁底部 { position: absolute; right: 0; bottom: 25px; left: 0; display: flex; align-items: center; justify-content: space-between; color: #9aa19b; font-size: 11px; }
+.底部裝飾 { color: #94b3a1; font-size: 21px; }
+
+.問卷 { padding: 38px 24px 58px; }
+.問卷欄 { width: min(680px, 100%); margin: 0 auto; }
+.文字按鈕 { padding: 6px 0; border: 0; background: none; color: #71807a; cursor: pointer; font-size: 13px; }
+.文字按鈕 span { margin-right: 7px; }
+.進度區 { margin-top: 34px; }
+.進度文字 { display: flex; justify-content: space-between; margin-bottom: 10px; color: #76827d; font-size: 12px; }
+.進度底條 { height: 4px; overflow: hidden; border-radius: 4px; background: #e5e8e0; }
+.進度完成 { width: 20%; height: 100%; border-radius: inherit; background: #6b9b87; transition: width .25s ease; }
+.題目卡 { margin-top: 24px; padding: 37px 42px 30px; border: 1px solid #e9eae3; border-radius: 10px; background: #fff; box-shadow: 0 14px 40px #193b3509; }
+.題目分類 { margin: 0 0 13px; color: #719884; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.題目卡 h2 { margin: 0; color: #203a3b; font-size: clamp(22px, 3vw, 29px); letter-spacing: -.03em; line-height: 1.5; }
+.題目補充 { margin: 9px 0 25px; color: #8a938f; font-size: 13px; }
+.選項列表 { display: grid; gap: 10px; }
+.選項列 { position: relative; display: block; cursor: pointer; }
+.選項列 input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.選項卡 { display: flex; align-items: center; min-height: 57px; padding: 12px 15px; border: 1px solid #e6e9e2; border-radius: 7px; background: #fff; transition: border .16s ease, background .16s ease; }
+.選項列:hover .選項卡 { border-color: #a9c3b3; }
+.選項列 input:checked + .選項卡 { border-color: #78a68f; background: #f2f7f2; }
+.選項圓點 { display: grid; flex: 0 0 18px; width: 18px; height: 18px; margin-right: 13px; place-items: center; border: 1px solid #cbd3cc; border-radius: 50%; }
+.選項列 input:checked + .選項卡 .選項圓點 { border-color: #618d78; }
+.選項列 input:checked + .選項卡 .選項圓點::after { width: 8px; height: 8px; border-radius: 50%; background: #618d78; content: ''; }
+.選項文字 { color: #44534f; font-size: 14px; }
+.題目操作 { display: flex; justify-content: space-between; margin-top: 27px; padding-top: 21px; border-top: 1px solid #eff0eb; }
+.題目操作 .按鈕 { min-height: 44px; }
+.問卷註記 { margin: 20px 0 0; color: #98a09c; text-align: center; font-size: 11px; }
+.問卷註記 span { margin-right: 5px; }
+.送出狀態 { margin: 16px 0 0; color: #567c68; text-align: center; font-size: 13px; line-height: 1.7; }
+.送出狀態.狀態失敗 { color: #a34f42; }
+.送出狀態:not(.隱藏) + .問卷註記 { margin-top: 10px; }
+
+.結果 { padding: 55px 24px 70px; }
+.結果欄 { width: min(760px, 100%); margin: 0 auto; }
+.結果欄 .眉題 { margin-bottom: 14px; }
+.結果欄 > h2 { margin: 0; color: #193739; font-size: 35px; letter-spacing: -.04em; }
+.結果引言 { max-width: 590px; margin: 13px 0 27px; color: #79847e; font-size: 14px; line-height: 1.8; }
+.結果卡 { overflow: hidden; border: 1px solid #e7e9e2; border-radius: 10px; background: #fff; box-shadow: 0 18px 50px #193b350b; }
+.分數區 { display: flex; align-items: center; gap: 35px; padding: 28px 34px; background: #f9faf6; }
+.分數環 { display: grid; flex: 0 0 145px; width: 145px; height: 145px; padding: 9px; place-items: center; border-radius: 50%; background: conic-gradient(#78a58f var(--分數角度, 0deg), #e5ebe4 0); }
+.分數中心 { display: flex; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: #f9faf6; }
+.分數中心 strong { color: #234740; font-size: 38px; font-weight: 600; line-height: 1.1; }
+.分數中心 span { margin-top: 7px; color: #87918a; font-size: 10px; }
+.結果說明 { max-width: 420px; }
+.結果標籤 { display: inline-block; padding: 6px 10px; border-radius: 4px; background: #e7f0e8; color: #537d69; font-size: 11px; font-weight: 700; }
+.結果說明 p { margin: 12px 0 0; color: #687771; font-size: 14px; line-height: 1.8; }
+.摘要區 { padding: 24px 34px 29px; }
+.摘要區 h3 { margin: 0 0 13px; color: #324743; font-size: 13px; }
+.摘要區 dl { margin: 0; }
+.摘要列 { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid #eff0eb; font-size: 13px; }
+.摘要列 dt { color: #929b95; }
+.摘要列 dd { margin: 0; color: #40534c; }
+.群體摘要 { margin-top: 18px; padding: 23px 28px; border: 1px solid #e7e9e2; border-radius: 10px; background: #fff; }
+.群體摘要 h3 { margin: 0 0 17px; color: #324743; font-size: 13px; }
+.群體指標 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.群體指標項目 { display: grid; gap: 7px; padding: 15px; border-radius: 7px; background: #f8faf6; }
+.群體指標項目 span { color: #78857e; font-size: 11px; }
+.群體指標項目 strong { color: #234740; font-size: 25px; font-weight: 600; }
+.群體指標項目 small { color: #929b95; font-size: 10px; line-height: 1.6; }
+.結果免責 { margin: 16px 0 22px; color: #959d98; font-size: 11px; line-height: 1.7; }
+
+.頁尾 { min-height: 62px; border-top: 1px solid #e7e7df; color: #939b95; font-size: 10px; letter-spacing: .02em; }
+
+@media (max-width: 760px) {
+  .頁首, .頁尾 { width: calc(100% - 40px); }
+  .頁首 { height: 68px; }
+  .頁首標記 { font-size: 10px; }
+  .首頁 { grid-template-columns: 1fr; width: calc(100% - 44px); min-height: auto; padding: 55px 0 85px; gap: 35px; }
+  h1 { font-size: clamp(36px, 9vw, 52px); }
+  .首頁圖卡 { min-height: 315px; }
+  .VIX圖卡 { min-height: 370px; }
+  .K線圖, .K線圖 svg { min-height: 174px; height: 174px; }
+  .刻度圖 { height: 115px; }
+  .首頁底部 { bottom: 24px; }
+  .題目卡 { padding: 29px 23px 23px; }
+  .分數區 { gap: 22px; padding: 24px 20px; }
+  .分數環 { flex-basis: 120px; width: 120px; height: 120px; }
+  .分數中心 strong { font-size: 32px; }
+  .摘要區 { padding: 22px 21px 25px; }
+  .摘要列 { grid-template-columns: 105px 1fr; }
+  .群體摘要 { padding: 20px; }
+}
+
+@media (max-width: 460px) {
+  .頁首, .頁尾 { width: calc(100% - 32px); }
+  .品牌 { gap: 8px; font-size: 12px; }
+  .品牌圖示 { width: 28px; height: 28px; }
+  .頁首標記 { max-width: 124px; text-align: right; line-height: 1.5; }
+  .首頁 { width: calc(100% - 36px); padding-top: 42px; }
+  .首頁操作 { gap: 16px; }
+  .首頁圖卡 { padding-right: 20px; padding-left: 20px; }
+  .問卷 { padding: 25px 17px 45px; }
+  .題目卡 { padding-right: 18px; padding-left: 18px; }
+  .選項卡 { min-height: 54px; padding: 10px 12px; }
+  .選項文字 { font-size: 13px; }
+  .結果 { padding: 42px 17px 55px; }
+  .結果欄 > h2 { font-size: 30px; }
+  .分數區 { flex-direction: column; align-items: flex-start; gap: 17px; padding: 22px; }
+  .分數環 { align-self: center; }
+  .摘要列 { grid-template-columns: 1fr; gap: 5px; }
+  .群體指標 { grid-template-columns: 1fr; }
+  .頁尾 { gap: 14px; font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
